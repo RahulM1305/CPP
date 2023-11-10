@@ -90,6 +90,28 @@ void deleteAtTail(Node *&head)
     free(temp);
 }
 
+void deleteAtPosition(Node *&head, int pos)
+{
+    if (pos == 0)
+    {
+        deleteAtHead(head);
+        return;
+    }
+
+    int current_pos = 0;
+    Node *prev = head;
+    while (current_pos != pos - 1)
+    {
+        prev = prev->next;
+        ;
+        current_pos++;
+    }
+
+    Node *temp = prev->next;
+    prev->next = prev->next->next;
+    free(temp);
+}
+
 void display(Node *head)
 {
 
@@ -119,6 +141,8 @@ int main()
     deleteAtHead(head);
     display(head);
     deleteAtTail(head);
+    display(head);
+    deleteAtPosition(head, 1);
     display(head);
 
     return 0;
