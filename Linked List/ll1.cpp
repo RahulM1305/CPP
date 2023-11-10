@@ -43,6 +43,10 @@ void deleteAtHead(Node *&head)
     free(temp);
 }
 
+void deleteAtTail(Node *&head)
+{
+}
+
 void display(node *head)
 {
 
