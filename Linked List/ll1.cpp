@@ -35,6 +35,40 @@ void insertAtTail(Node *&head, int val)
     temp->next = new_node;
 }
 
+void insertAtPosition(Node *&head, int val, int pos)
+{
+    if (pos == 0)
+    {
+        insertAtHead(head, val);
+        return;
+    }
+    Node *new_node = new Node(val);
+    Node *temp = head;
+    int current_pos = 0;
+    while (current_pos != pos - 1)
+    {
+        temp = temp->next;
+        current_pos++;
+    }
+
+    new_node->next = temp->next;
+    temp->next = new_node;
+}
+
+void updateAtPosition(Node *&head, int k, int val)
+{
+
+    Node *temp = head;
+    int curr_pos = 0;
+
+    while (curr_pos != k)
+    {
+        temp = temp->next;
+        curr_pos++;
+    }
+    temp->val = val;
+}
+
 void deleteAtHead(Node *&head)
 {
 
@@ -45,9 +79,18 @@ void deleteAtHead(Node *&head)
 
 void deleteAtTail(Node *&head)
 {
+    Node *second_last = head;
+    while (second_last->next->next != NULL)
+    {
+        second_last = second_last->next;
+    }
+
+    Node *temp = second_last->next;
+    second_last->next = NULL;
+    free(temp);
 }
 
-void display(node *head)
+void display(Node *head)
 {
 
     Node *temp = head;
@@ -62,8 +105,21 @@ int main()
 {
 
     Node *head = NULL;
-    insertAthead(head, 2);
+    insertAtHead(head, 2);
     display(head);
     insertAtHead(head, 1);
     display(head);
+    insertAtTail(head, 3);
+    display(head);
+    insertAtPosition(head, 4, 1);
+    display(head);
+    updateAtPosition(head, 2, 5);
+    display(head);
+
+    deleteAtHead(head);
+    display(head);
+    deleteAtTail(head);
+    display(head);
+
+    return 0;
 }
