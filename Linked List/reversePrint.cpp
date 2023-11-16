@@ -53,11 +53,11 @@ public:
     }
 };
 
-void reverse(Node *head)
+void reversePrint(Node *head)
 {
     if (head == NULL)
         return;
-    reverse(head->next);
+    reversePrint(head->next);
     cout << head->val << " ";
 }
 
@@ -71,7 +71,7 @@ int main()
     ll.insertAtTail(4);
     ll.insertAtTail(5);
     ll.display();
-    reverse(ll.head);
+    reversePrint(ll.head);
 
     return 0;
 }
