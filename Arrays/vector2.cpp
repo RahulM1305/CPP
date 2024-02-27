@@ -1,4 +1,4 @@
-// last occurence of an element x in a given vector
+// count the number of elements greater than value x
 
 #include <iostream>
 #include <vector>
