@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/C++/CPP/Arrays",
-      "program": "d:/C++/CPP/Arrays/build/Debug/outDebug",
+      "cwd": "d:/C++/CPP/Graphs",
+      "program": "d:/C++/CPP/Graphs/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
