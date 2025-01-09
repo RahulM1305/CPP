@@ -30,7 +30,7 @@ void display()
 int main()
 {
     cin >> v;
-    graph.resize(v, unordered_map<int, int>());
+    graph.resize(v, unordered_map<int, int> ());
     int e;
     cin >> e;
     while (e--)
